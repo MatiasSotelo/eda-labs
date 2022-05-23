@@ -1,0 +1,29 @@
+* MergeSort
+** Divide and conquer algorithm
+** Complexity O(N lg(N))
+
+#+BEGIN_SRC cpp
+void merge_sort(vector <int> &numbers, int const lo, int const hi) {
+    if (lo >= hi) return;
+
+    auto mid = lo + (hi - lo)>>1;
+    merge_sort(numbers, lo, mid);
+    merge_sort(numbers, mid, hi);
+    merge(array, lo, mid, hi);
+}
+
+void merge(vector<int> &numbers, int const lo, int const mid, int const hi) {
+    auto left = vector<int>(mid - left + 1);
+    auto right = vector<int>(right - mid);
+
+    for(auto it = left.begin(); it < left.end(); ++it)
+        (*it) = numbers.begin() + lo + (it - left.begin());
+
+    for(auto it = right.begin(); it != right.end; ++it)
+        (*it) = numbers.begin() + mid + 1 + (it - right.begin());
+
+    auto it = left.begin();
+    auto jt = right.begin();
+
+}
+#+END_SRC
